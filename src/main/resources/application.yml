@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ZoomFitnes
+    username: postgres
+    password: 1234
+  jpa:
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: create
+      format_sql: true
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      show-sql: true
