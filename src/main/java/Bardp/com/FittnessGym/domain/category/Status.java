@@ -1,4 +1,4 @@
-package Bardp.com.FittnessGym.domain;
+package Bardp.com.FittnessGym.domain.category;
 
 public enum Status {
 

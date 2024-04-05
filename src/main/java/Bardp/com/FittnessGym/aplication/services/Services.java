@@ -1,17 +1,12 @@
 package Bardp.com.FittnessGym.aplication.services;
 
-import Bardp.com.FittnessGym.domain.User;
-import Bardp.com.FittnessGym.persistence.IUserRepository;
-import jakarta.annotation.Resource;
+import Bardp.com.FittnessGym.domain.models.User;
+import Bardp.com.FittnessGym.infraestructure.repository.IUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 
 @Service
