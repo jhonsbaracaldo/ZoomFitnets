@@ -1,6 +1,6 @@
-package Bardp.com.FittnessGym.persistence;
+package Bardp.com.FittnessGym.infraestructure.repository;
 
-import Bardp.com.FittnessGym.domain.User;
+import Bardp.com.FittnessGym.domain.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
