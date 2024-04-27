@@ -1,6 +1,6 @@
 package Bardp.com.FittnessGym.aplication.services;
 
-import Bardp.com.FittnessGym.domain.models.User;
+import Bardp.com.FittnessGym.domain.models.users.User;
 import Bardp.com.FittnessGym.infraestructure.repository.IUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -10,25 +10,29 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class Services {
+public class ServicesUser {
+
+    private final IUserRepository userRepository;
+
     @Autowired
-    private IUserRepository userRepository;
+    public ServicesUser(IUserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
-
-
-    public List<User> View () {
+    public List<User> View() {
         List<User> entities = userRepository.findAll();
         return entities;
     }
 
-    public ResponseEntity<Object> Create(User user){
+    public ResponseEntity<Object> Create(User user) {
         User newUser = userRepository.save(user);
         return ResponseEntity.ok(newUser);
+
+
     }
 
-    public ResponseEntity<Object> Update(User user) {
+    public ResponseEntity<Object> update(User user) {
         Optional<User> optionalUser = userRepository.findById(user.getId());
-
         // Verifica si el usuario existe en la base de datos
         if (optionalUser.isPresent()) {
             User existingUser = optionalUser.get();

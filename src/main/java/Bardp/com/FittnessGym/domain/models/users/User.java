@@ -1,13 +1,12 @@
-package Bardp.com.FittnessGym.domain.models;
+package Bardp.com.FittnessGym.domain.models.users;
 
 import Bardp.com.FittnessGym.domain.category.Status;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.Date;
+
 
 @Getter
 @Setter
@@ -19,6 +18,14 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     private String name;
 
     private String lastname;
@@ -28,8 +35,20 @@ public class User {
     private String email;
 
     private String blood_type;
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date date_initial;
+
+
+
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date date_End;
  //Estatus
