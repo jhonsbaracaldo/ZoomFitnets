@@ -10,7 +10,7 @@ import java.util.List;
 @CrossOrigin("*")
 @RequestMapping(path = "/v1/api/user")
 @RestController
-public class Controller {
+public class ControllerUser {
     @Autowired
     private ServicesUser servicesUser;
 
