@@ -3,6 +3,9 @@ package Bardp.com.FittnessGym.aplication.services;
 import Bardp.com.FittnessGym.domain.models.users.User;
 import Bardp.com.FittnessGym.infraestructure.repository.IUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -45,6 +48,18 @@ public class ServicesUser {
         } else {
             // El usuario no existe en la base de datos
             return ResponseEntity.notFound().build();
+        }
+    }
+
+    public ResponseEntity<Object>delete(Long id){
+        boolean existing =this.userRepository.existsById(id);
+
+        if(!existing){
+            return ResponseEntity.notFound().build();
+        }
+        else
+        {
+            return  ResponseEntity.status(HttpStatus.ACCEPTED).build();
         }
     }
 }
