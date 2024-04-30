@@ -24,11 +24,15 @@ public class ControllerUser {
         return servicesUser.Create(user);
     }
 
-    @PutMapping
+    @PutMapping(path ="/actualizar")
     public ResponseEntity<Object> update(@RequestBody User user){
         return servicesUser.update(user);
     }
 
+     @DeleteMapping(path = "/borrar")
+    public  ResponseEntity<Object>delete(@PathVariable("id")  Long id){
+        return  servicesUser.delete(id);
+     }
 
 
 
